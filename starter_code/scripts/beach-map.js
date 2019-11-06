@@ -13,4 +13,5 @@ class Beachmap {
         this.context.drawImage(this.img, this.x, 0, this.width, this.height);
         this.context.drawImage(this.img, this.x + this.width, 0, this.width, this.height);
     }
+
 }
