@@ -29,7 +29,7 @@ class Trash {
     drawTrash() {
         //this.img.src = this.randomImg(this.array);
         if (this.y > 0 && this.x > 0){
-        this.context.drawImage(this.img, this.x, this.y, this.size, this.size);
+        this.context.drawImage(this.img, this.x + 10, this.y + 10, this.size, this.size);
         }
     }
 
@@ -46,17 +46,17 @@ class Trash {
         return imgArr[indImg]
         // let randomIndex = Math.round(Math.random()*(imgArr.length - 1));//todo: confirm formula
     }
-
+    
     updateTrash() {
         // this.x += 30;
         // this.y += 30;
 
         if (this.x <= this.size) {
-            this.x = this.size
+            this.x = this.size + 20
         } else if (this.x >= this.width - this.size) {
             this.x = this.width - this.size
         } else if (this.y <= this.size) {
-            this.y = this.size
+            this.y = this.size + 20
         } else if (this.y >= this.height - this.size) {
             this.y = this.height - this.size
         }

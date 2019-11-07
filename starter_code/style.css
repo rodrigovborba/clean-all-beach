@@ -1,12 +1,11 @@
-@font-face {
-  font-family: 'Digi';
-  src: url('fonts/ds-digib.ttf');
-}
-
 #sphere {
   font-family: 'Verdana';
   font-size: 20px;
   
+}
+
+.background {
+  background-image: url('images/beach-background.png');
 }
 
 body {
@@ -16,22 +15,26 @@ body {
 
 .game-intro {
   float: left;
-  padding: 10% 10%;
+  padding: 90px 90px;
+  color: brown;
+  text-align: left;
 }
 
 .game-intro p {
   font-size: 18px;
-  font-family: "Verdana"
+  font-family: sans-serif;
 }
 
-.game-intro ol {
+.game-intro h3 {
   font-size: 18px;
-  font-family: "Verdana"
+  font-family: sans-serif;
+  text-align: left;
+  padding-bottom: 70px;
 }
 
 body button {
   font-size: 20px;
-  background-color: black;
+  background-color: brown;
   color: #fff;
   padding: 10px 20px;
   border: 0;
@@ -42,5 +45,11 @@ body button {
 
 #game-board {
     float: left;
-    padding: 20px 0px;
+    padding: 20px 0px; 
+}
+
+canvas {
+  margin-top: 50px;
+  display: none;
+  border: 5px solid brown;
 }

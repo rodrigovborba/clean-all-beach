@@ -9,39 +9,64 @@ class Player {
     this.vx = 0;
     this.vy = 0;
     this.img = new Image();
-    this.size = 45;
     this.img.src = 'images/player.png';
+    this.img1 = new Image();
+    this.img1.src = 'images/player-head.png';
+    this.size = 45;
+    this.size1 = 35;
+    this.lightning = false;
 
   }
   drawPlayer() {
     this.context.drawImage(this.img, this.x, this.y, this.size, this.size);
   }
 
+  drawPlayerhead() {
+    this.context.drawImage(this.img1, this.x, this.y, this.size1, this.size1);
+  }
+
   moveUp() {
     //this.positionY -= 10
-  this.vy = -2
-       this.direction = 'N'
-   }
-   moveDown() {
-       this.vy = 2
-       this.direction = 'S'
-   }
-   moveLeft() {
-       this.vx = -2
-       this.direction = 'W'
-   }
-   moveRight() {
-       this.vx = 2
-       this.direction = 'E'
-   }
-update() {
-       if (this.x + this.vx > 0 && this.x + this.vx + this.size < this.game.width){
-           this.x += this.vx;
-       }
-       if (this.y + this.vy > 0 && this.y + this.vy + this.size < this.game.height){
-           this.y += this.vy;
-       }
-   }
+    if (this.lightning === true) {
+      this.vy = -4
+    } else {
+      this.vy = -2
+      this.direction = 'N'
+    }
+  }
+  moveDown() {
+    if (this.lightning === true) {
+      this.vy = 4
+    } else {
+      this.vy = 2
+      this.direction = 'S'
+    }
+  }
+  moveLeft() {
+    if (this.lightning === true) {
+      this.vx = -4
+    } else {
+      this.vx = -2
+      this.direction = 'W'
+    }
+  }
+  moveRight() {
+    if (this.lightning === true) {
+      this.vx = 4
+    } else {
+      this.vx = 2
+      this.direction = 'E'
+    }
+  }
+
+  update() {
+    if (this.x + this.vx > 0 && this.x + this.vx + this.size < this.game.width) {
+      this.x += this.vx;
+    }
+    if (this.y + this.vy > 0 && this.y + this.vy + this.size < this.game.height) {
+      this.y += this.vy;
+    }
+  }
 
 
   // updatePlayer() {
