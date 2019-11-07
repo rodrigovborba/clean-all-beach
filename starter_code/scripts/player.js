@@ -7,7 +7,7 @@ class Player {
     this.x = 23;
     this.y = 410;
     this.vx = 0;
-    this.vy = 0.2;
+    this.vy = 0;
     this.img = new Image();
     this.size = 45;
     this.img.src = 'images/player.png';
@@ -16,6 +16,32 @@ class Player {
   drawPlayer() {
     this.context.drawImage(this.img, this.x, this.y, this.size, this.size);
   }
+
+  moveUp() {
+    //this.positionY -= 10
+  this.vy = -2
+       this.direction = 'N'
+   }
+   moveDown() {
+       this.vy = 2
+       this.direction = 'S'
+   }
+   moveLeft() {
+       this.vx = -2
+       this.direction = 'W'
+   }
+   moveRight() {
+       this.vx = 2
+       this.direction = 'E'
+   }
+update() {
+       if (this.x + this.vx > 0 && this.x + this.vx + this.size < this.game.width){
+           this.x += this.vx;
+       }
+       if (this.y + this.vy > 0 && this.y + this.vy + this.size < this.game.height){
+           this.y += this.vy;
+       }
+   }
 
 
   // updatePlayer() {

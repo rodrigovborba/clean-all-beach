@@ -6,9 +6,6 @@ class Container {
         this.context = game.context
         this.x = 410;
         this.y = 400;
-        this.vx = 0;
-        this.vy = 0;
-        this.score = 0;
         this.size = 92;
         this.img = new Image();
         this.img.src = 'images/trashcan.png';

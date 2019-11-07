@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'Digi';
+  src: url('fonts/ds-digib.ttf');
+}
+
+#sphere {
+  font-family: 'Verdana';
+  font-size: 20px;
+  
+}
+
 body {
   padding: 0;
   text-align: center;
@@ -16,14 +27,6 @@ body {
 .game-intro ol {
   font-size: 18px;
   font-family: "Verdana"
-}
-
-.logo-img {
-  width: 350px;
-}
-
-.arrows-img {
-  width: 150px;
 }
 
 body button {

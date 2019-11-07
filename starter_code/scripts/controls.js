@@ -9,22 +9,22 @@ class Controls {
                 //LEFT
                 case 37:
                     event.preventDefault();
-                    this.game.player.x += -5
+                    this.game.player.moveLeft();
                     break;
                     //RIGHT
                 case 39:
                     event.preventDefault();
-                    this.game.player.x += 5
+                    this.game.player.moveRight();
                     break;
                     //UP
                 case 38:
                     event.preventDefault();
-                    this.game.player.y += -5
+                    this.game.player.moveUp();
                     break;
                     //DOWN
                 case 40:
                     event.preventDefault();
-                    this.game.player.y += 5
+                    this.game.player.moveDown();
                     break;
             }
         })

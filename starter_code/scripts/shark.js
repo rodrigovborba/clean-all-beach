@@ -6,7 +6,7 @@ class Shark {
         this.context = game.context
         this.x = 100;
         this.y = 100;
-        this.vx = 2;
+        this.vx = 5;
         this.vy = 0.5;
         this.img = new Image();
         this.size = 45
