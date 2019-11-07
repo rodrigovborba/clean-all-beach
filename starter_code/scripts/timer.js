@@ -20,6 +20,6 @@ class Timer {
     drawTimer() {
         this.context.font = "26px serif";
         this.context.fillStyle = "white";
-        this.context.fillText(`0:${this.currentTime}`, this.width - 70, this.height -470);
+        this.context.fillText(`0:${this.currentTime}`, this.width - 46, this.height -470);
     }
 }

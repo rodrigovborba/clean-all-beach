@@ -11,7 +11,7 @@ class Game {
         this.shark = new Shark(this);
         this.timer = new Timer(this);
         this.pickTrash = 0;
-        this.hasTrash = 0;
+        this.hasTrash = false;
         this.containerTrash = 0;
         this.trashArray = [
             new Trash(this),
@@ -26,6 +26,7 @@ class Game {
             new Trash(this),
             new Trash(this),
         ];
+        this.trashGrabbed = [];
     }
 
     startGame() {
@@ -74,23 +75,23 @@ class Game {
             }
         }
         for (let i = 0; i < this.trashArray.length; i++) {
-            if (this.hasTrash === 0) {
                 if (this.player.x < this.trashArray[i].x + this.trashArray[i].size &&
                     this.player.x + this.player.size > this.trashArray[i].x &&
                     this.player.y < this.trashArray[i].y + this.trashArray[i].size &&
                     this.player.y + this.player.size > this.trashArray[i].y) {
-                    this.trashArray[i].x = this.player.x + 20
-                    this.trashArray[i].y = this.player.y
-                    this.hasTrash = 1;
-                }
-            } else if (this.hasTrash === 1) {
-                console.log("You can't take it!")
+                        this.trashGrabbed.push(this.trashArray[i]);
+                    }
+                    if (this.trashGrabbed.length) {
+                        this.trashGrabbed[0].x = this.player.x + 20;
+                        this.trashGrabbed[0].y = this.player.y
+
             }
             //check the collision between my player and my trash(element of array)
             //check the collision between my player+trash 
             if (this.trashArray[i].x > this.container.x - 25 &&
                 this.trashArray[i].y > this.container.y - 25) {
                 this.trashArray.splice(i, 1)
+                this.trashGrabbed = [];
             }
         }
     }
