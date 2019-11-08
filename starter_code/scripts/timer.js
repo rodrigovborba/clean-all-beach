@@ -22,7 +22,7 @@ class Timer {
     
 
     drawTimer() {
-        this.context.font = "26px serif";
+        this.context.font = "20px Zorque";
         this.context.fillStyle = "white";
         let seconds = (this.currentTime / 100).toFixed(0); 
         this.context.fillText(`0:${seconds}`, this.width - 46, this.height -470);

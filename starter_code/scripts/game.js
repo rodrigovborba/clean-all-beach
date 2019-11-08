@@ -71,10 +71,14 @@ class Game {
             this.winning();
         } else if (this.timer.currentTime === 0) {
             this.gameOver();
-        } else if (this.player.x < this.shark.x + this.shark.size &&
-            this.player.x + this.player.size > this.shark.x &&
-            this.player.y < this.shark.y + this.shark.size &&
-            this.player.y + this.player.size > this.shark.y) {
+            //right side of player
+        } else if (this.player.x < this.shark.x + 30 &&
+            //left side of player
+            this.player.x + 30 > this.shark.x &&
+            //player down
+            this.player.y < this.shark.y + 30 &&
+            //player up
+            this.player.y + 30 > this.shark.y) {
             this.gameOver();
         } else {
             this.drawEverything();
@@ -141,9 +145,9 @@ class Game {
         context.fillStyle = 'brown';
         context.fill();
         context.fillStyle = 'white';
-        context.font = '40px Courier';
+        context.font = '40px Zorque';
         context.fillText(`Game Over!`, 140, 260);
-        context.font = '16px Courier';
+        context.font = '16px Zorque';
         context.fillText(`Click "StartGame" to restart the game`, 80, 290);
     }
 
@@ -153,9 +157,9 @@ class Game {
         context.fillStyle = 'green';
         context.fill();
         context.fillStyle = 'white';
-        context.font = '40px Courier';
+        context.font = '40px Zorque';
         context.fillText(`You Win!!!`, 140, 260);
-        context.font = '16px Courier';
-        context.fillText(`Click "StartGame" to play again`, 85, 290);
+        context.font = '16px Zorque';
+        context.fillText(`Click "Start Game" to play again`, 85, 290);
     }
 }

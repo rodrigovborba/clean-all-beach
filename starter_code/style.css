@@ -1,5 +1,10 @@
+@font-face {
+  font-family: Zorque;
+  src: url(./font/6809\ chargen.ttf);
+}
+
 #sphere {
-  font-family: 'Verdana';
+  font-family: 'Zorque';
   font-size: 20px;
   
 }
@@ -11,12 +16,13 @@
 body {
   padding: 0;
   text-align: center;
+  font-family: Zorque;
 }
 
 .game-intro {
   float: left;
   padding-left: 60px;
-  padding-right: 60px;
+  padding-right: 150px;
   /* padding: 30px 30px; */
   color: brown;
   text-align: center;
@@ -24,17 +30,18 @@ body {
 
 .game-intro p {
   font-size: 18px;
-  font-family: sans-serif;
+  font-family: Zorque;
 }
 
 .game-intro h3 {
   font-size: 18px;
-  font-family: sans-serif;
+  font-family: Zorque;
   text-align: left;
   padding-bottom: 10px;
 }
 
 body button {
+  font-family: Zorque;
   font-size: 20px;
   background-color: brown;
   color: #fff;
@@ -47,7 +54,7 @@ body button {
 
 #game-board {
     float: left;
-    padding: 20px 0px; 
+    padding: 100px 0px; 
 }
 
 canvas {
