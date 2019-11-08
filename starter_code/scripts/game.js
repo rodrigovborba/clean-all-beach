@@ -1,4 +1,5 @@
 const backgroundSound = new Audio("sounds/background-music.mp3");
+const collectItems = new Audio("sonds/collect-items.mp3")
 
 class Game {
     constructor($canvas) {
@@ -119,6 +120,7 @@ class Game {
                 this.player.y < this.trashArray[i].y + this.trashArray[i].size &&
                 this.player.y + this.player.size > this.trashArray[i].y) {
                 this.trashGrabbed.push(this.trashArray[i]);
+                collectItems.play();
             }
             if (this.trashGrabbed.length) {
                 this.trashGrabbed[0].x = this.player.x + 20;
