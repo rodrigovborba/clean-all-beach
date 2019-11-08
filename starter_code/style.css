@@ -15,9 +15,11 @@ body {
 
 .game-intro {
   float: left;
-  padding: 90px 90px;
+  padding-left: 60px;
+  padding-right: 60px;
+  /* padding: 30px 30px; */
   color: brown;
-  text-align: left;
+  text-align: center;
 }
 
 .game-intro p {
@@ -29,7 +31,7 @@ body {
   font-size: 18px;
   font-family: sans-serif;
   text-align: left;
-  padding-bottom: 70px;
+  padding-bottom: 10px;
 }
 
 body button {
@@ -52,4 +54,31 @@ canvas {
   margin-top: 50px;
   display: none;
   border: 5px solid brown;
+}
+
+.tips {
+  padding-top: 1px;
+  padding-left: 8px;
+  padding-bottom: 1px;
+  background-color: brown;
+  color: white;
+  text-align: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.tips h3 {
+  font-size: 15px;
+  text-decoration: none;
+}
+
+#start-button {
+  text-align: center;
+}
+
+#align-left {
+  text-align: left;
+  margin-left: 0;
 }

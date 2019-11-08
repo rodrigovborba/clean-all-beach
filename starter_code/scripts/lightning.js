@@ -49,6 +49,7 @@ class Lightning {
     drawTimerlightning() {
         this.context.font = "26px serif";
         this.context.fillStyle = "green";
-        this.context.fillText(`0:${this.currentTime}`, this.width - 34, this.height -440);
+        let seconds = (this.currentTime / 100).toFixed(0);
+        this.context.fillText(`0:${seconds}`, this.width - 34, this.height -440);
     }
 }

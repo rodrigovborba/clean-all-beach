@@ -1,3 +1,5 @@
+const backgroundSound = new Audio("sounds/background-music.mp3");
+
 class Game {
     constructor($canvas) {
         this.canvas = $canvas;
@@ -43,11 +45,11 @@ class Game {
         this.timer.startTimer();
         this.timer.drawTimer();
         for (let i = 0; i < this.trashArray.length; i++) {
-            for(let j = 0; j < this.trashArray.length; j++) {
+            for (let j = 0; j < this.trashArray.length; j++) {
                 if (this.trashArray[i].x + this.trashArray[i].size === this.trashArray[j].x + this.trashArray[j].size &&
                     this.trashArray[i].y + this.trashArray[i].size === this.trashArray[j].y + this.trashArray[j].size) {
-                        this.trashArray[i].x + 10;
-                        this.trashArray[i].y + 10;
+                    this.trashArray[i].x + 10;
+                    this.trashArray[i].y + 10;
                 }
             }
             this.trashArray[i].drawTrash();
@@ -55,7 +57,7 @@ class Game {
         this.shark.drawShark();
         this.lightning.drawLightning();
         if (this.player.y < 365) {
-        this.player.drawPlayerhead();
+            this.player.drawPlayerhead();
         } else {
             this.player.drawPlayer();
         }
@@ -64,6 +66,7 @@ class Game {
 
     }
     animation() {
+        backgroundSound.play();
         if (this.trashArray.length === 0) {
             this.winning();
         } else if (this.timer.currentTime === 0) {
@@ -86,8 +89,8 @@ class Game {
         if (this.lightning.currentTime === 0) {
             this.player.lightning = false;
             this.lightning.currentTime = 500;
-        //if the player is has the lightning, this condition is going to 
-        //draw and start the timer lightning.
+            //if the player is has the lightning, this condition is going to 
+            //draw and start the timer lightning.
         } else if (this.player.lightning === true) {
             this.lightning.drawTimerlightning();
             this.lightning.startTimerlightning();
@@ -97,7 +100,7 @@ class Game {
             this.player.x + this.player.size > this.lightning.x &&
             this.player.y < this.lightning.y + this.lightning.size &&
             this.player.y + this.player.size > this.lightning.y) {
-                this.player.lightning = true;
+            this.player.lightning = true;
         }
         //updating the trash
         for (let i = 0; i < this.trashArray.length; i++) {
@@ -133,6 +136,7 @@ class Game {
     }
 
     gameOver() {
+        backgroundSound.pause();
         context.rect(0, 150, 500, 200);
         context.fillStyle = 'brown';
         context.fill();
@@ -144,6 +148,7 @@ class Game {
     }
 
     winning() {
+        backgroundSound.pause();
         context.rect(0, 150, 500, 200);
         context.fillStyle = 'green';
         context.fill();
