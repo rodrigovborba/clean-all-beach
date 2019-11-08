@@ -1,5 +1,4 @@
 const backgroundSound = new Audio("sounds/background-music.mp3");
-const collectItems = new Audio("sonds/collect-items.mp3")
 
 class Game {
     constructor($canvas) {
@@ -32,6 +31,7 @@ class Game {
         ];
         this.trashGrabbed = [];
         this.lightningGrabbed = [];
+        backgroundSound.play();
     }
 
     startGame() {
@@ -67,7 +67,7 @@ class Game {
 
     }
     animation() {
-        backgroundSound.play();
+        
         if (this.trashArray.length === 0) {
             this.winning();
         } else if (this.timer.currentTime === 0) {
@@ -80,12 +80,13 @@ class Game {
             this.player.y < this.shark.y + 30 &&
             //player up
             this.player.y + 30 > this.shark.y) {
-            this.gameOver();
-        } else {
-            this.drawEverything();
-            this.updateEverything();
+                this.gameOver();
+            } else {
+                this.drawEverything();
+                this.updateEverything();
+                //the animation frame needs to be called in the conditions
+                this.frame = window.requestAnimationFrame((timestamp) => this.animation(timestamp));
         }
-        window.requestAnimationFrame((timestamp) => this.animation(timestamp));
     }
 
     updateEverything() {
@@ -120,7 +121,6 @@ class Game {
                 this.player.y < this.trashArray[i].y + this.trashArray[i].size &&
                 this.player.y + this.player.size > this.trashArray[i].y) {
                 this.trashGrabbed.push(this.trashArray[i]);
-                collectItems.play();
             }
             if (this.trashGrabbed.length) {
                 this.trashGrabbed[0].x = this.player.x + 20;
@@ -142,6 +142,9 @@ class Game {
     }
 
     gameOver() {
+        console.log('gameover')
+        window.cancelAnimationFrame(this.frame)
+        delete this.frame
         backgroundSound.pause();
         context.rect(0, 150, 500, 200);
         context.fillStyle = 'brown';
